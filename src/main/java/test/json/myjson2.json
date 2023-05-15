@@ -1,0 +1,23 @@
+{
+	"subject": [
+		"자바",
+		"하둡",
+		"시큐어코딩"
+	],
+	"name": "김서연",
+	"history": [
+		{
+			"month": "11",
+			"subject": "java"
+		},
+		{
+			"month": "12",
+			"subject": "servlet"
+		}
+	],
+	"addr": {
+		"zip": "111-222",
+		"addrl": "인천시"
+	},
+	"age": "25"
+}

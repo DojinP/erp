@@ -1,0 +1,21 @@
+{
+	"subject": [
+		"자바",
+		"스프링",
+		"하둡"
+	],
+	"name": "방탄소년단",
+	"comment": [
+		{
+			"no": "1",
+			"id": "bts1",
+			"content": "json만들기"
+		},
+		{
+			"no": "2",
+			"id": "bts2",
+			"content": "json만들기2"
+		}
+	],
+	"age": "30"
+}
