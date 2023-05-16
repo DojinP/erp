@@ -16,6 +16,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
@@ -90,7 +93,7 @@ public class BoardController {
 		System.out.println(boardlist);
 		return mav;	// view
 	}
-		
+
 	@RequestMapping("/board/search.do")
 	public ModelAndView tag_search(String tag, String search) {
 		ModelAndView mav = new ModelAndView("board/list");
@@ -105,6 +108,7 @@ public class BoardController {
 		BoardDTO board = service.getBoardInfo(board_no);
 		List<BoardFileDTO> boardfiledtolist = service.getFileList(board_no);
 		System.out.println(board_no + " /// " + boardfiledtolist);
+
 		String view = "";
 		if(state.equals("READ")) {
 			view = "board/read";
@@ -119,18 +123,14 @@ public class BoardController {
 	
 	@RequestMapping("/board/delete.do")
 	public String delete(String board_no, HttpSession session) {
-//		int del_state = service.delete(board_no);
 		MemberDTO user = (MemberDTO)session.getAttribute("user");
-//		ModelAndView mav = new ModelAndView("board/list");
 		String view = "";
 		if(user == null) {
 			view = "redirect:/emp/login.do";
 		}else {
 			int result = service.delete(board_no); 
 			view = "redirect:/board/list.do?category=all";
-		}
-		
-//		return "redirect:/board/list.do"; // 컨트롤러 요청재지정
+		}		
 		return view;
 	}
 	
@@ -139,7 +139,7 @@ public class BoardController {
 		service.update(board);
 		return "redirect:/board/list.do"; // 컨트롤러 요청재지정
 	}
-	
+
 	@RequestMapping("/board/download/{id}/{board_no}/{boardFileno}")
 	public ResponseEntity<UrlResource> downloadFile(@PathVariable String id, @PathVariable String board_no, 
 												@PathVariable String boardFileno, HttpSession session) throws MalformedURLException, FileNotFoundException{

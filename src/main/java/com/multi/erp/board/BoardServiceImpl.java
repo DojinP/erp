@@ -93,8 +93,6 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public BoardFileDTO getFile(BoardFileDTO inputdata) {
 		return dao.getFile(inputdata);
-	}
-	
-	
+	}	
 	
 }

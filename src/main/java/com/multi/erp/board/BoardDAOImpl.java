@@ -89,7 +89,5 @@ public class BoardDAOImpl implements BoardDAO {
 	public BoardFileDTO getFile(BoardFileDTO inputdata) {
 		return sqlSessionTemplate.selectOne("com.multi.erp.board.getfileinfo", inputdata);
 	}
-	
-	
 
 }
