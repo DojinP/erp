@@ -199,6 +199,23 @@
 			<artifactId>json-simple</artifactId>
 			<version>1.1.1</version>
 		</dependency>
+
+		<!-- Jackson Core -->
+		<!-- JSON 파서와 maker 등 기본기능을 제공하는 라이브러리 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.10</version>
+		</dependency>
+
+		<!-- Jackson Databind -->
+		<!-- java 객체를 json 으로 자동변환하는 라이브러리 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.10</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>

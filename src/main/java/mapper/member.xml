@@ -10,4 +10,20 @@
 				and m.deptno = d.deptno
 				and d.job_category = j.job_id
 	</select>
+	<select id="idcheck" parameterType="String" resultType="boolean">
+<!--select IF(COUNT(*) = 1, 1, 0) from member2 where id = #{id} -->
+<!-- select EXISTS (select 1 from member2 where id = #{id} LIMIT 1) -->
+		select count(*) from member2
+		where id = #{id}
+	</select>
+	<insert id="insert" parameterType="member">
+		insert into member2
+		values (#{id}, #{pass}, #{name}, #{ssn}, #{birthday}, #{marry}, #{gender}, null, null,
+		null, sysdate(), null, #{deptno}, null, #{zipcode}, #{addr}, #{detailaddr}, 
+		#{phonehome}, #{phoneco}, #{phonecell}, #{email}, #{profile_photo})
+	</insert>
+	
+	<select id="treedata" parameterType="dept">
+		select * from member2 where deptno = #{deptno}
+	</select>
 </mapper>

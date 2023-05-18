@@ -33,7 +33,7 @@
 	<div style="height: 90px" style="padding:10px">
 		<div id="toparea" class="navbar navbar-inverse">
 			<a href="#"
-				style="position: absolute; top: 30px; font-size: 18pt; font-weight: bolder; text-decoration: none; padding-left: 10px">KimSaemERP</a>
+				style="position: absolute; top: 30px; font-size: 18pt; font-weight: bolder; text-decoration: none; padding-left: 10px">ERP</a>
 			<ul class="nav navbar-nav navbar-right"
 				style="position: relative; top: 20px">
 				<c:choose>
@@ -45,7 +45,7 @@
 						</ul>
 					</c:when>
 					<c:otherwise>
-						<li><a href="/erp/emp/logout.do"> <span
+						<li><a href="/erp/emp/spring/logout"> <span
 								class="glyphicon glyphicon-log-out"></span> Logout
 						</a></li>
 						<li><a href="/erp/emp/mypage"> <span

@@ -23,4 +23,9 @@
 		<put-attribute name="content" 
 			value="/WEB-INF/view/dept/dept_update.jsp"/>
 	</definition>
+	<definition name="dept/tree" extends="mainTemplate">
+		<put-attribute name="menu" value="/WEB-INF/view/menu/insa_menu.jsp"/>
+		<put-attribute name="content" 
+			value="/WEB-INF/view/dept/tree.jsp"/>
+	</definition>
 </tiles-definitions>

@@ -5,9 +5,12 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class BoardDTO {
 	String board_no;
 	String id;
+	@JsonFormat(pattern = "yyyy-MM-dd", timezone = "Asia/Seoul")	// version 차이 때문에 pattern을 지정해야함
 	Date write_date;
 	String title;
 	String content;

@@ -21,6 +21,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.UriUtils;
@@ -161,7 +162,6 @@ public class BoardController {
 		// 4. 파일을 다운로드 형식으로 응답케하기 위해서 응답 헤더에 세팅 (기존 ContentType = text/html 형식) // == attachment; filename="xxx.jpg"
 		String mycontenttype = "attachment; filename=\""+encodedFilename+"\"";
 		
-		
 		// 5. 응답메시지 만들기
 //		BodyBuilder builder = ResponseEntity.ok(); // -> response 가 정상처리되도록 설정. (200번 응답코드 세팅)
 //		ResponseEntity<UrlResource> response = builder.body(resource);
@@ -171,4 +171,13 @@ public class BoardController {
 				.header(HttpHeaders.CONTENT_DISPOSITION, mycontenttype)
 				.body(resource);
 	}
+	
+	// mainContext.jsp 에서 ajax로 요청될 메소드
+	// => category 별 데이터만 조회해서 json array로 response
+	@RequestMapping(value = "/board/ajax/list.do", produces = "application/json;charset=utf-8")
+	@ResponseBody
+	public List<BoardDTO> ajaxlist(String category) {
+		return service.findByCategory(category);
+	}
+	
 }

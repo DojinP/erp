@@ -11,7 +11,7 @@
 		<a href="/erp/dept/register" class="list-group-item">부서등록</a> 
 		<a href="/erp/emp/insert"	class="list-group-item">인사등록</a> 
 		<a href="/erp/dept/list.do" class="list-group-item">부서조회</a>
-		<a href="#" class="list-group-item">조직도</a>
+		<a href="/erp/emp/dept/tree.do" class="list-group-item">조직도</a>
 		<a href="#" class="list-group-item">부서별 인사 조회</a>
 		<a href="#"	class="list-group-item">인사평가</a>	
 		<a href="#" class="list-group-item">인사점수조회하기</a>

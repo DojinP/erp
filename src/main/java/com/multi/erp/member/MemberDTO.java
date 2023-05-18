@@ -30,13 +30,12 @@ public class MemberDTO {
 	private String deptname; //로그인 사용자의 부서정보
 	private String menupath; //로그인 사용자의 메뉴페이지정보
 	private String job_category;//로그인 사용자의 job분류정보
-	//MultipartFile userImage;
+	private MultipartFile userImage;
 
 	public MemberDTO() {
 		System.out.println("기본생성자");
 	}
 	//로그인 파라미터 매핑용 생성자
-
 	
 	//select용 생성자
 	public MemberDTO(String id, String pass, String name, String ssn, String birthday, String marry, String gender,
@@ -100,6 +99,42 @@ public class MemberDTO {
 		this.menupath = menupath;
 		this.job_category = job_category;
 	}
+	
+	//file 포함 생성자
+	public MemberDTO(String id, String pass, String name, String ssn, String birthday, String marry, String gender,
+			String position, String duty, String classes, Date startday, Date endday, String deptno, String curstate,
+			String zipcode, String addr, String detailaddr, String phonehome, String phoneco, String phonecell,
+			String email, String profile_photo, String deptname, String menupath, String job_category,
+			MultipartFile userImage) {
+		super();
+		this.id = id;
+		this.pass = pass;
+		this.name = name;
+		this.ssn = ssn;
+		this.birthday = birthday;
+		this.marry = marry;
+		this.gender = gender;
+		this.position = position;
+		this.duty = duty;
+		this.classes = classes;
+		this.startday = startday;
+		this.endday = endday;
+		this.deptno = deptno;
+		this.curstate = curstate;
+		this.zipcode = zipcode;
+		this.addr = addr;
+		this.detailaddr = detailaddr;
+		this.phonehome = phonehome;
+		this.phoneco = phoneco;
+		this.phonecell = phonecell;
+		this.email = email;
+		this.profile_photo = profile_photo;
+		this.deptname = deptname;
+		this.menupath = menupath;
+		this.job_category = job_category;
+		this.userImage = userImage;
+	}
+	
 	public String getDeptname() {
 		return deptname;
 	}
@@ -302,17 +337,23 @@ public class MemberDTO {
 		this.profile_photo = profile_photo;
 	}
 
+	public MultipartFile getUserImage() {
+		return userImage;
+	}
+
+	public void setUserImage(MultipartFile userImage) {
+		this.userImage = userImage;
+	}
+
 	@Override
 	public String toString() {
-		return "MemberVO [id=" + id + ", pass=" + pass + ", name=" + name + ", ssn=" + ssn + ", birthday=" + birthday
+		return "MemberDTO [id=" + id + ", pass=" + pass + ", name=" + name + ", ssn=" + ssn + ", birthday=" + birthday
 				+ ", marry=" + marry + ", gender=" + gender + ", position=" + position + ", duty=" + duty + ", classes="
 				+ classes + ", startday=" + startday + ", endday=" + endday + ", deptno=" + deptno + ", curstate="
 				+ curstate + ", zipcode=" + zipcode + ", addr=" + addr + ", detailaddr=" + detailaddr + ", phonehome="
 				+ phonehome + ", phoneco=" + phoneco + ", phonecell=" + phonecell + ", email=" + email
-				+ ", profile_photo=" + profile_photo + 
-				", deptname=" + deptname +
-				", menupath=" + menupath
-				+ ", job_category=" + job_category + "]";
+				+ ", profile_photo=" + profile_photo + ", deptname=" + deptname + ", menupath=" + menupath
+				+ ", job_category=" + job_category + ", userImage=" + userImage + "]";
 	}
 
 	
