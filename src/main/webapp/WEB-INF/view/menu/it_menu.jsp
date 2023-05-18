@@ -14,6 +14,9 @@
 		<a href="#" class="list-group-item">back-end</a>
 		<a href="#"	class="list-group-item">프로젝트진행상황</a>	
 		<a href="#" class="list-group-item">개발이슈조회</a>
+		<a href="/erp/json/view" class="list-group-item">JSON</a>
+		<a href="/erp/ajax/view" class="list-group-item">ajax테스트</a>	
+		<a href="/erp/ajax/exam" class="list-group-item">ajax연습하기</a>
 	</div>
 </body>
 </html>
