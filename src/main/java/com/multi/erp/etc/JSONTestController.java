@@ -42,4 +42,11 @@ public class JSONTestController {
 		// return을 List로 명시하면 jackson-databind 라이브러리가 자동으로 json Array로 변환해서 리턴한다
 		return service.boardList();
 	}
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/json")
+public class JSONTestController {
+	
 }
