@@ -22,9 +22,6 @@ public class AjaxTestController {
 		this.service = service;
 	}
 	
-@Controller
-@RequestMapping("/ajax")
-public class AjaxTestController {
 	@RequestMapping("/noajax")
 	public String noajax(String id, Model model) {
 		String msg = "";
